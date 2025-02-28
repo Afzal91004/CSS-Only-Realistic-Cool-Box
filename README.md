@@ -2,7 +2,7 @@
 
 A visually striking, interactive box element built with pure CSS. This project demonstrates how to create realistic 3D effects, animations, and interactive elements without JavaScript.
 
-![Cool Box Preview](https://github.com/yourusername/css-cool-box/raw/main/preview.gif)
+<!--![Cool Box Preview](https://github.com/Afzal91004/CSS-Only-Realistic-Cool-Box/raw/main/preview.gif)-->
 
 ## Features
 
@@ -15,7 +15,7 @@ A visually striking, interactive box element built with pure CSS. This project d
 
 ## Demo
 
-[View Live Demo](https://yourusername.github.io/css-cool-box/)
+[View Live Demo](https://css-only-realistic-cool-box.vercel.app/)
 
 ## Usage
 

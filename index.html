@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CSS-Only Realistic Cool Box</title>
+    <style>
+      html {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: #f0f0f0;
+        perspective: 1000px;
+      }
+
+      .cool-box {
+        height: 12em;
+        width: 17em;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 1.2em;
+        background-color: #1c04ba;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: linear-gradient(
+          135deg,
+          #3023ae 0%,
+          #2a1fad 20%,
+          #241ba7 40%,
+          #1e17a1 60%,
+          #1912a0 80%,
+          #1408a0 100%
+        );
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+          0 15px 40px rgba(28, 4, 186, 0.2),
+          inset 0 -3px 10px rgba(0, 0, 0, 0.3),
+          inset 0 3px 10px rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+        user-select: none;
+      }
+
+      /* Glass effect on top */
+      .cool-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.15) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        border-radius: 1.2em 1.2em 4em 4em;
+        pointer-events: none;
+      }
+
+      /* Shine effect animation */
+      .cool-box::after {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transform: translateX(-100%);
+        pointer-events: none;
+        animation: shine 3s infinite 2s;
+      }
+
+      .cool-box:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+          0 15px 20px rgba(28, 4, 186, 0.3),
+          inset 0 -3px 10px rgba(0, 0, 0, 0.3),
+          inset 0 3px 10px rgba(255, 255, 255, 0.2);
+        background: linear-gradient(
+          135deg,
+          #4233c7 0%,
+          #382cd5 20%,
+          #2f25c7 40%,
+          #261dbb 60%,
+          #211ab6 80%,
+          #1c04ba 100%
+        );
+      }
+
+      .cool-box:active {
+        transform: translateY(5px) scale(0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5),
+          inset 0 -2px 5px rgba(0, 0, 0, 0.5),
+          inset 0 2px 5px rgba(255, 255, 255, 0.1);
+        transition: all 0.1s ease;
+      }
+
+      /* Animation keyframes */
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%);
+        }
+        20%,
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cool-box">This is a cool box</div>
+  </body>
+</html>
